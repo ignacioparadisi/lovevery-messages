@@ -8,12 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		32CA647F2BD06D2F00533154 /* MSGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA647E2BD06D2F00533154 /* MSGApp.swift */; };
-		32CA64812BD06D2F00533154 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64802BD06D2F00533154 /* ContentView.swift */; };
+		32CA64812BD06D2F00533154 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64802BD06D2F00533154 /* UsersView.swift */; };
 		32CA64832BD06D3000533154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CA64822BD06D3000533154 /* Assets.xcassets */; };
 		32CA64862BD06D3000533154 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CA64852BD06D3000533154 /* Preview Assets.xcassets */; };
 		32CA64902BD06D3000533154 /* MSGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA648F2BD06D3000533154 /* MSGTests.swift */; };
 		32CA649A2BD06D3000533154 /* MSGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64992BD06D3000533154 /* MSGUITests.swift */; };
 		32CA649C2BD06D3000533154 /* MSGUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA649B2BD06D3000533154 /* MSGUITestsLaunchTests.swift */; };
+		32CA64AD2BD06DEB00533154 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64AC2BD06DEB00533154 /* RemoteDataSource.swift */; };
+		32CA64AF2BD06E9500533154 /* AWSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64AE2BD06E9500533154 /* AWSDataSource.swift */; };
+		32CA64B12BD06F7900533154 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64B02BD06F7900533154 /* API.swift */; };
+		32CA64B32BD0721100533154 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64B22BD0721100533154 /* HTTPClient.swift */; };
+		32CA64B62BD0786800533154 /* MessagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64B52BD0786800533154 /* MessagesRepository.swift */; };
+		32CA64BA2BD078AF00533154 /* HTTPMessagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64B92BD078AF00533154 /* HTTPMessagesRepository.swift */; };
+		32CA64BF2BD4131500533154 /* SendMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64BE2BD4131500533154 /* SendMessageView.swift */; };
+		32CA64C12BD4133E00533154 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64C02BD4133E00533154 /* ConversationView.swift */; };
+		32CA64C42BD41B3F00533154 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64C32BD41B3F00533154 /* User.swift */; };
+		32CA64C62BD41B4600533154 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64C52BD41B4600533154 /* Message.swift */; };
+		32CA64C92BD41B6B00533154 /* MessageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64C82BD41B6B00533154 /* MessageAPI.swift */; };
+		32CA64CB2BD41BBF00533154 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64CA2BD41BBF00533154 /* MessageResponse.swift */; };
+		32CA64CD2BD41BD500533154 /* MessageBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64CC2BD41BD500533154 /* MessageBody.swift */; };
+		32CA64CF2BD41E1E00533154 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64CE2BD41E1E00533154 /* UsersViewModel.swift */; };
+		32CA64D12BD420AC00533154 /* SendMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D02BD420AC00533154 /* SendMessageViewModel.swift */; };
+		32CA64D32BD423D600533154 /* UserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D22BD423D600533154 /* UserMessageCell.swift */; };
+		32CA64D52BD42C2500533154 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D42BD42C2500533154 /* ConversationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +53,7 @@
 /* Begin PBXFileReference section */
 		32CA647B2BD06D2F00533154 /* MSG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CA647E2BD06D2F00533154 /* MSGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSGApp.swift; sourceTree = "<group>"; };
-		32CA64802BD06D2F00533154 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		32CA64802BD06D2F00533154 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		32CA64822BD06D3000533154 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32CA64852BD06D3000533154 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32CA648B2BD06D3000533154 /* MSGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +61,23 @@
 		32CA64952BD06D3000533154 /* MSGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CA64992BD06D3000533154 /* MSGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSGUITests.swift; sourceTree = "<group>"; };
 		32CA649B2BD06D3000533154 /* MSGUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSGUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		32CA64AC2BD06DEB00533154 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		32CA64AE2BD06E9500533154 /* AWSDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSDataSource.swift; sourceTree = "<group>"; };
+		32CA64B02BD06F7900533154 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		32CA64B22BD0721100533154 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		32CA64B52BD0786800533154 /* MessagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRepository.swift; sourceTree = "<group>"; };
+		32CA64B92BD078AF00533154 /* HTTPMessagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMessagesRepository.swift; sourceTree = "<group>"; };
+		32CA64BE2BD4131500533154 /* SendMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageView.swift; sourceTree = "<group>"; };
+		32CA64C02BD4133E00533154 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
+		32CA64C32BD41B3F00533154 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		32CA64C52BD41B4600533154 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		32CA64C82BD41B6B00533154 /* MessageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAPI.swift; sourceTree = "<group>"; };
+		32CA64CA2BD41BBF00533154 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
+		32CA64CC2BD41BD500533154 /* MessageBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBody.swift; sourceTree = "<group>"; };
+		32CA64CE2BD41E1E00533154 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		32CA64D02BD420AC00533154 /* SendMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewModel.swift; sourceTree = "<group>"; };
+		32CA64D22BD423D600533154 /* UserMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessageCell.swift; sourceTree = "<group>"; };
+		32CA64D42BD42C2500533154 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +128,10 @@
 		32CA647D2BD06D2F00533154 /* MSG */ = {
 			isa = PBXGroup;
 			children = (
+				32CA64AA2BD06D5900533154 /* Data */,
+				32CA64A92BD06D5400533154 /* Domain */,
+				32CA64A82BD06D4D00533154 /* Presentation */,
 				32CA647E2BD06D2F00533154 /* MSGApp.swift */,
-				32CA64802BD06D2F00533154 /* ContentView.swift */,
 				32CA64822BD06D3000533154 /* Assets.xcassets */,
 				32CA64842BD06D3000533154 /* Preview Content */,
 			);
@@ -125,6 +161,117 @@
 				32CA649B2BD06D3000533154 /* MSGUITestsLaunchTests.swift */,
 			);
 			path = MSGUITests;
+			sourceTree = "<group>";
+		};
+		32CA64A82BD06D4D00533154 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64BD2BD4130500533154 /* ConversationView */,
+				32CA64BC2BD412FA00533154 /* SendMessageView */,
+				32CA64BB2BD412F300533154 /* UsersView */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		32CA64A92BD06D5400533154 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64C22BD41B3600533154 /* Models */,
+				32CA64B42BD0785700533154 /* Repository */,
+				32CA64AB2BD06D7100533154 /* Data Source */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		32CA64AA2BD06D5900533154 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64C72BD41B6200533154 /* API */,
+				32CA64B82BD0787E00533154 /* Data Source */,
+				32CA64B72BD0787900533154 /* Repository */,
+				32CA64B22BD0721100533154 /* HTTPClient.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		32CA64AB2BD06D7100533154 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64AC2BD06DEB00533154 /* RemoteDataSource.swift */,
+				32CA64B02BD06F7900533154 /* API.swift */,
+			);
+			path = "Data Source";
+			sourceTree = "<group>";
+		};
+		32CA64B42BD0785700533154 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64B52BD0786800533154 /* MessagesRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		32CA64B72BD0787900533154 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64B92BD078AF00533154 /* HTTPMessagesRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		32CA64B82BD0787E00533154 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64AE2BD06E9500533154 /* AWSDataSource.swift */,
+			);
+			path = "Data Source";
+			sourceTree = "<group>";
+		};
+		32CA64BB2BD412F300533154 /* UsersView */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64802BD06D2F00533154 /* UsersView.swift */,
+				32CA64CE2BD41E1E00533154 /* UsersViewModel.swift */,
+				32CA64D22BD423D600533154 /* UserMessageCell.swift */,
+			);
+			path = UsersView;
+			sourceTree = "<group>";
+		};
+		32CA64BC2BD412FA00533154 /* SendMessageView */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64BE2BD4131500533154 /* SendMessageView.swift */,
+				32CA64D02BD420AC00533154 /* SendMessageViewModel.swift */,
+			);
+			path = SendMessageView;
+			sourceTree = "<group>";
+		};
+		32CA64BD2BD4130500533154 /* ConversationView */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64C02BD4133E00533154 /* ConversationView.swift */,
+				32CA64D42BD42C2500533154 /* ConversationViewModel.swift */,
+			);
+			path = ConversationView;
+			sourceTree = "<group>";
+		};
+		32CA64C22BD41B3600533154 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64C32BD41B3F00533154 /* User.swift */,
+				32CA64C52BD41B4600533154 /* Message.swift */,
+				32CA64CA2BD41BBF00533154 /* MessageResponse.swift */,
+				32CA64CC2BD41BD500533154 /* MessageBody.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32CA64C72BD41B6200533154 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64C82BD41B6B00533154 /* MessageAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +404,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32CA64812BD06D2F00533154 /* ContentView.swift in Sources */,
+				32CA64AF2BD06E9500533154 /* AWSDataSource.swift in Sources */,
+				32CA64812BD06D2F00533154 /* UsersView.swift in Sources */,
+				32CA64C92BD41B6B00533154 /* MessageAPI.swift in Sources */,
+				32CA64B32BD0721100533154 /* HTTPClient.swift in Sources */,
+				32CA64AD2BD06DEB00533154 /* RemoteDataSource.swift in Sources */,
 				32CA647F2BD06D2F00533154 /* MSGApp.swift in Sources */,
+				32CA64D12BD420AC00533154 /* SendMessageViewModel.swift in Sources */,
+				32CA64B12BD06F7900533154 /* API.swift in Sources */,
+				32CA64B62BD0786800533154 /* MessagesRepository.swift in Sources */,
+				32CA64BF2BD4131500533154 /* SendMessageView.swift in Sources */,
+				32CA64BA2BD078AF00533154 /* HTTPMessagesRepository.swift in Sources */,
+				32CA64C62BD41B4600533154 /* Message.swift in Sources */,
+				32CA64D32BD423D600533154 /* UserMessageCell.swift in Sources */,
+				32CA64C12BD4133E00533154 /* ConversationView.swift in Sources */,
+				32CA64CD2BD41BD500533154 /* MessageBody.swift in Sources */,
+				32CA64CF2BD41E1E00533154 /* UsersViewModel.swift in Sources */,
+				32CA64CB2BD41BBF00533154 /* MessageResponse.swift in Sources */,
+				32CA64D52BD42C2500533154 /* ConversationViewModel.swift in Sources */,
+				32CA64C42BD41B3F00533154 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
