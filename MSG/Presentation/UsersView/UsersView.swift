@@ -9,8 +9,8 @@ import SwiftUI
 
 struct UsersView: View {
     @Bindable private var viewModel: ViewModel = ViewModel()
-    @State private var showErrorAlert: Bool = false
     @State private var presentMessageForm: Bool = false
+    @State private var showLoadingIndicator: Bool = false
     var body: some View {
         List {
             ForEach(viewModel.users) { user in
@@ -18,7 +18,7 @@ struct UsersView: View {
             }
         }
         .overlay {
-            if viewModel.isLoading {
+            if showLoadingIndicator {
                 ProgressView()
             } else if viewModel.users.isEmpty {
                 Text("You don't have new messages")
@@ -29,9 +29,9 @@ struct UsersView: View {
         .navigationDestination(for: User.self, destination: { user in
             ConversationView(viewModel: ConversationView.ViewModel(user: user))
         })
-        .alert("Error", isPresented: $showErrorAlert, actions: {
+        .alert("Error", isPresented: $viewModel.showErrorAlert, actions: {
             Button {
-                showErrorAlert = false
+                viewModel.showErrorAlert = false
             } label: {
                 Text("Dismiss")
             }
@@ -52,25 +52,21 @@ struct UsersView: View {
             NavigationStack {
                 SendMessageView(onSendMessage: {
                     Task {
-                        await fetchMessages()
+                        await viewModel.fetchMessages()
                     }
                 })
             }
         })
         .animation(.spring, value: viewModel.users)
         .refreshable {
-            await fetchMessages()
+            await viewModel.fetchMessages()
         }
         .task {
-            await fetchMessages()
-        }
-    }
-    
-    func fetchMessages() async {
-        do {
-            try await viewModel.fetchMessages()
-        } catch {
-            showErrorAlert = true
+            if viewModel.users.isEmpty {
+                showLoadingIndicator = true
+                await viewModel.fetchMessages()
+                showLoadingIndicator = false
+            }
         }
     }
 }

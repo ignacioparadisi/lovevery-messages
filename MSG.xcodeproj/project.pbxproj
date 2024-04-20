@@ -31,6 +31,8 @@
 		32CA64D12BD420AC00533154 /* SendMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D02BD420AC00533154 /* SendMessageViewModel.swift */; };
 		32CA64D32BD423D600533154 /* UserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D22BD423D600533154 /* UserMessageCell.swift */; };
 		32CA64D52BD42C2500533154 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D42BD42C2500533154 /* ConversationViewModel.swift */; };
+		32CA64D82BD4380400533154 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D72BD4380400533154 /* RequestError.swift */; };
+		32CA64DA2BD43EA600533154 /* ConversationMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D92BD43EA600533154 /* ConversationMessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		32CA64D02BD420AC00533154 /* SendMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewModel.swift; sourceTree = "<group>"; };
 		32CA64D22BD423D600533154 /* UserMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessageCell.swift; sourceTree = "<group>"; };
 		32CA64D42BD42C2500533154 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		32CA64D72BD4380400533154 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		32CA64D92BD43EA600533154 /* ConversationMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,7 @@
 		32CA64A92BD06D5400533154 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				32CA64D62BD437F900533154 /* Errors */,
 				32CA64C22BD41B3600533154 /* Models */,
 				32CA64B42BD0785700533154 /* Repository */,
 				32CA64AB2BD06D7100533154 /* Data Source */,
@@ -251,6 +256,7 @@
 			children = (
 				32CA64C02BD4133E00533154 /* ConversationView.swift */,
 				32CA64D42BD42C2500533154 /* ConversationViewModel.swift */,
+				32CA64D92BD43EA600533154 /* ConversationMessageCell.swift */,
 			);
 			path = ConversationView;
 			sourceTree = "<group>";
@@ -272,6 +278,14 @@
 				32CA64C82BD41B6B00533154 /* MessageAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		32CA64D62BD437F900533154 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64D72BD4380400533154 /* RequestError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +421,7 @@
 				32CA64AF2BD06E9500533154 /* AWSDataSource.swift in Sources */,
 				32CA64812BD06D2F00533154 /* UsersView.swift in Sources */,
 				32CA64C92BD41B6B00533154 /* MessageAPI.swift in Sources */,
+				32CA64DA2BD43EA600533154 /* ConversationMessageCell.swift in Sources */,
 				32CA64B32BD0721100533154 /* HTTPClient.swift in Sources */,
 				32CA64AD2BD06DEB00533154 /* RemoteDataSource.swift in Sources */,
 				32CA647F2BD06D2F00533154 /* MSGApp.swift in Sources */,
@@ -420,6 +435,7 @@
 				32CA64C12BD4133E00533154 /* ConversationView.swift in Sources */,
 				32CA64CD2BD41BD500533154 /* MessageBody.swift in Sources */,
 				32CA64CF2BD41E1E00533154 /* UsersViewModel.swift in Sources */,
+				32CA64D82BD4380400533154 /* RequestError.swift in Sources */,
 				32CA64CB2BD41BBF00533154 /* MessageResponse.swift in Sources */,
 				32CA64D52BD42C2500533154 /* ConversationViewModel.swift in Sources */,
 				32CA64C42BD41B3F00533154 /* User.swift in Sources */,

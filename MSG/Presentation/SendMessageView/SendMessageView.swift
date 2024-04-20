@@ -41,6 +41,15 @@ struct SendMessageView: View {
         .formStyle(.columns)
         .padding()
         .navigationTitle("New Message")
+        .alert("Error", isPresented: $viewModel.showErrorAlert, actions: {
+            Button {
+                viewModel.showErrorAlert = false
+            } label: {
+                Text("Dismiss")
+            }
+        }, message: {
+            Text(viewModel.error?.localizedDescription ?? "")
+        })
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 if viewModel.isLoading {
@@ -48,13 +57,9 @@ struct SendMessageView: View {
                 } else {
                     Button {
                         Task(priority: .userInitiated) { @MainActor in
-                            do {
-                                try await viewModel.sendMessage()
-                                onSendMessage?()
-                                dismiss()
-                            } catch {
-                                print(error)
-                            }
+                            await viewModel.sendMessage()
+                            onSendMessage?()
+                            dismiss()
                         }
                         
                     } label: {

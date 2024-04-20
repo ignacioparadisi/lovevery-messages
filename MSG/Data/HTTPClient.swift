@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum RequestError: Error {
-    case invalidURL
-    case emptyResponse
-}
-
 final class HTTPClient {
     
     func request<T: Decodable>(api: API) async throws -> T {

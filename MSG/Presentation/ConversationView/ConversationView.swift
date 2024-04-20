@@ -7,24 +7,9 @@
 
 import SwiftUI
 
-struct ConversationMessageCell: View {
-    let message: Message
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(message.subject)
-                .bold()
-            Divider()
-            Text(message.message)
-        }
-        .padding()
-        .background(Color(uiColor: .secondarySystemGroupedBackground))
-        .clipShape(.rect(cornerRadius: 10))
-        .shadow(color: .gray.opacity(0.3), radius: 5)
-    }
-}
-
 struct ConversationView: View {
     @Bindable private var viewModel: ViewModel
+    @State private var showLoadingIndicator: Bool = false
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -49,25 +34,28 @@ struct ConversationView: View {
         .navigationTitle(viewModel.title)
         .defaultScrollAnchor(.bottom)
         .overlay {
-            if viewModel.isLoading {
+            if showLoadingIndicator {
                 ProgressView()
             } else {
                 EmptyView()
             }
         }
+        .alert("Error", isPresented: $viewModel.showErrorAlert, actions: {
+            Button {
+                viewModel.showErrorAlert = false
+            } label: {
+                Text("Dismiss")
+            }
+        }, message: {
+            Text(viewModel.error?.localizedDescription ?? "")
+        })
         .refreshable {
-            await fetchMessages()
+            await viewModel.fetchUser()
         }
         .task {
-            await fetchMessages()
-        }
-    }
-    
-    func fetchMessages() async {
-        do {
-            try await viewModel.fetchUser()
-        } catch {
-            print(error)
+            showLoadingIndicator = true
+            await viewModel.fetchUser()
+            showLoadingIndicator = false
         }
     }
 }
