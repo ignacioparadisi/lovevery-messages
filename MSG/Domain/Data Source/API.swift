@@ -16,6 +16,17 @@ protocol API {
     var body: Encodable? { get }
 }
 
+extension API {
+    var url: URL? {
+        var components = URLComponents()
+        components.scheme = scheme.rawValue
+        components.host = host
+        components.path = path
+        components.queryItems = parameters
+        return components.url
+    }
+}
+
 enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"

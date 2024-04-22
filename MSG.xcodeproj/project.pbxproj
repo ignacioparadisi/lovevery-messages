@@ -11,7 +11,7 @@
 		32CA64812BD06D2F00533154 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64802BD06D2F00533154 /* UsersView.swift */; };
 		32CA64832BD06D3000533154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CA64822BD06D3000533154 /* Assets.xcassets */; };
 		32CA64862BD06D3000533154 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CA64852BD06D3000533154 /* Preview Assets.xcassets */; };
-		32CA64902BD06D3000533154 /* MSGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA648F2BD06D3000533154 /* MSGTests.swift */; };
+		32CA64902BD06D3000533154 /* AWSDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA648F2BD06D3000533154 /* AWSDataSourceTests.swift */; };
 		32CA649A2BD06D3000533154 /* MSGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64992BD06D3000533154 /* MSGUITests.swift */; };
 		32CA649C2BD06D3000533154 /* MSGUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA649B2BD06D3000533154 /* MSGUITestsLaunchTests.swift */; };
 		32CA64AD2BD06DEB00533154 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64AC2BD06DEB00533154 /* RemoteDataSource.swift */; };
@@ -33,6 +33,11 @@
 		32CA64D52BD42C2500533154 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D42BD42C2500533154 /* ConversationViewModel.swift */; };
 		32CA64D82BD4380400533154 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D72BD4380400533154 /* RequestError.swift */; };
 		32CA64DA2BD43EA600533154 /* ConversationMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64D92BD43EA600533154 /* ConversationMessageCell.swift */; };
+		32CA65352BD6BEF500533154 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA65342BD6BEF500533154 /* MockURLProtocol.swift */; };
+		32CA65382BD6C2F900533154 /* get_messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 32CA65372BD6C2F900533154 /* get_messages.json */; };
+		32CA653A2BD6C68700533154 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA65392BD6C68700533154 /* JSONReader.swift */; };
+		32CA653C2BD6C84400533154 /* get_messages_for_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 32CA653B2BD6C84400533154 /* get_messages_for_user.json */; };
+		32CA653F2BD6CDEB00533154 /* create_new_message.json in Resources */ = {isa = PBXBuildFile; fileRef = 32CA653E2BD6CDEB00533154 /* create_new_message.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +64,7 @@
 		32CA64822BD06D3000533154 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32CA64852BD06D3000533154 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32CA648B2BD06D3000533154 /* MSGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		32CA648F2BD06D3000533154 /* MSGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSGTests.swift; sourceTree = "<group>"; };
+		32CA648F2BD06D3000533154 /* AWSDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSDataSourceTests.swift; sourceTree = "<group>"; };
 		32CA64952BD06D3000533154 /* MSGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CA64992BD06D3000533154 /* MSGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSGUITests.swift; sourceTree = "<group>"; };
 		32CA649B2BD06D3000533154 /* MSGUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSGUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -82,6 +87,11 @@
 		32CA64D42BD42C2500533154 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		32CA64D72BD4380400533154 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		32CA64D92BD43EA600533154 /* ConversationMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMessageCell.swift; sourceTree = "<group>"; };
+		32CA65342BD6BEF500533154 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		32CA65372BD6C2F900533154 /* get_messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = get_messages.json; sourceTree = "<group>"; };
+		32CA65392BD6C68700533154 /* JSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
+		32CA653B2BD6C84400533154 /* get_messages_for_user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = get_messages_for_user.json; sourceTree = "<group>"; };
+		32CA653E2BD6CDEB00533154 /* create_new_message.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = create_new_message.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +163,9 @@
 		32CA648E2BD06D3000533154 /* MSGTests */ = {
 			isa = PBXGroup;
 			children = (
-				32CA648F2BD06D3000533154 /* MSGTests.swift */,
+				32CA653D2BD6CDA800533154 /* Helpers */,
+				32CA65362BD6C2D800533154 /* Responses */,
+				32CA648F2BD06D3000533154 /* AWSDataSourceTests.swift */,
 			);
 			path = MSGTests;
 			sourceTree = "<group>";
@@ -235,9 +247,8 @@
 		32CA64BB2BD412F300533154 /* UsersView */ = {
 			isa = PBXGroup;
 			children = (
-				32CA64802BD06D2F00533154 /* UsersView.swift */,
-				32CA64CE2BD41E1E00533154 /* UsersViewModel.swift */,
-				32CA64D22BD423D600533154 /* UserMessageCell.swift */,
+				32CA65312BD6BDDC00533154 /* View Model */,
+				32CA65302BD6BDD400533154 /* Views */,
 			);
 			path = UsersView;
 			sourceTree = "<group>";
@@ -245,8 +256,8 @@
 		32CA64BC2BD412FA00533154 /* SendMessageView */ = {
 			isa = PBXGroup;
 			children = (
-				32CA64BE2BD4131500533154 /* SendMessageView.swift */,
-				32CA64D02BD420AC00533154 /* SendMessageViewModel.swift */,
+				32CA652E2BD6BDBB00533154 /* View Model */,
+				32CA652D2BD6BDB400533154 /* Views */,
 			);
 			path = SendMessageView;
 			sourceTree = "<group>";
@@ -254,9 +265,8 @@
 		32CA64BD2BD4130500533154 /* ConversationView */ = {
 			isa = PBXGroup;
 			children = (
-				32CA64C02BD4133E00533154 /* ConversationView.swift */,
-				32CA64D42BD42C2500533154 /* ConversationViewModel.swift */,
-				32CA64D92BD43EA600533154 /* ConversationMessageCell.swift */,
+				32CA652F2BD6BDC700533154 /* View Model */,
+				32CA652C2BD6BDA300533154 /* Views */,
 			);
 			path = ConversationView;
 			sourceTree = "<group>";
@@ -286,6 +296,75 @@
 				32CA64D72BD4380400533154 /* RequestError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		32CA652C2BD6BDA300533154 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64C02BD4133E00533154 /* ConversationView.swift */,
+				32CA64D92BD43EA600533154 /* ConversationMessageCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32CA652D2BD6BDB400533154 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64BE2BD4131500533154 /* SendMessageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32CA652E2BD6BDBB00533154 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64D02BD420AC00533154 /* SendMessageViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		32CA652F2BD6BDC700533154 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64D42BD42C2500533154 /* ConversationViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		32CA65302BD6BDD400533154 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64802BD06D2F00533154 /* UsersView.swift */,
+				32CA64D22BD423D600533154 /* UserMessageCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32CA65312BD6BDDC00533154 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				32CA64CE2BD41E1E00533154 /* UsersViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		32CA65362BD6C2D800533154 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				32CA65372BD6C2F900533154 /* get_messages.json */,
+				32CA653B2BD6C84400533154 /* get_messages_for_user.json */,
+				32CA653E2BD6CDEB00533154 /* create_new_message.json */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		32CA653D2BD6CDA800533154 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				32CA65392BD6C68700533154 /* JSONReader.swift */,
+				32CA65342BD6BEF500533154 /* MockURLProtocol.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +480,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32CA65382BD6C2F900533154 /* get_messages.json in Resources */,
+				32CA653C2BD6C84400533154 /* get_messages_for_user.json in Resources */,
+				32CA653F2BD6CDEB00533154 /* create_new_message.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +528,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32CA64902BD06D3000533154 /* MSGTests.swift in Sources */,
+				32CA64902BD06D3000533154 /* AWSDataSourceTests.swift in Sources */,
+				32CA653A2BD6C68700533154 /* JSONReader.swift in Sources */,
+				32CA65352BD6BEF500533154 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,4 @@
+{
+    "statusCode": 200,
+    "body": "{\"user\": \"Dan\", \"subject\": \"pets\", \"message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis ex id ante scelerisque elementum. Praesent fringilla diam vitae ligula aliquam, eu molestie dui blandit. Donec scelerisque arcu quis tellus scelerisque, vitae scelerisque elit auctor. Integer elementum luctus interdum. Mauris lacinia, turpis vel euismod dignissim, felis erat suscipit erat, vitae commodo dolor orci eget neque. Aenean interdum dolor ut fringilla semper. Quisque porta ut dui non sodales. Suspendisse a quam nec velit vehicula vehicula vel et nisi. Suspendisse potenti. Fusce in mattis ex.\"}"
+}
