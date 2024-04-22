@@ -8,7 +8,6 @@
 import Foundation
 
 final class HTTPClient {
-    
     private let session: URLSession
     
     init(session: URLSession = URLSession.shared) {
@@ -20,7 +19,6 @@ final class HTTPClient {
         let (data, _) = try await session.data(for: request)
         let decoder = JSONDecoder()
         return try decoder.decode(T.self, from: data)
-
     }
     
     private func createRequest(api: API) throws -> URLRequest {

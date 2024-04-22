@@ -7,6 +7,17 @@
 
 import Foundation
 
+
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
+
+enum HTTPScheme: String {
+    case http
+    case https
+}
+
 protocol API {
     var method: HTTPMethod { get }
     var scheme: HTTPScheme { get }
@@ -25,14 +36,4 @@ extension API {
         components.queryItems = parameters
         return components.url
     }
-}
-
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-}
-
-enum HTTPScheme: String {
-    case http
-    case https
 }
