@@ -112,13 +112,13 @@ Steps:
 ### Test plan for getting all messages
 
 #### Test case 1:
+Successfully fetch all messages from RemoteDataSource.
 
-Successfully fetch all messages from RemoteDataSource
-**Precondition:** json file with service response exists
+**Precondition:** json file with service response exists.
+
 **Steps:**
 
-    - Create a RemoteDataSource with an HTTPClient injecting the MockURLSession into the HTTPClient constructor
-
+   - Create a RemoteDataSource with an HTTPClient injecting the MockURLSession into the HTTPClient constructor
    - Setup the data that the mock URLSession will return
    - Trigger the getMessages() function in the data source.
    - Capture and validate the output from getMessages()
@@ -126,11 +126,11 @@ Successfully fetch all messages from RemoteDataSource
 **Expected:** The data fetched from the mock URLSession correctly converts to the Decodable expected object.
 
 #### **Test case 2:** 
+Handle error fetching messages from RemoteDataSource.
 
-Handle error fetching messages from RemoteDataSource
-**Precondition:** json file with service response exists
+**Precondition:** json file with service response exists.
+
 **Steps:**
-
    - Create a RemoteDataSource with an HTTPClient injecting the MockURLSession into the HTTPClient constructor
    - Setup the error the mock URLSession will return
    - Trigger the getMessages() function in the data source.
@@ -139,36 +139,35 @@ Handle error fetching messages from RemoteDataSource
 **Expected:** The URLSession should return the expected error.
 
 #### Test case 3:
+Successfully fetch all messages from MessagesRepository.
 
-Successfully fetch all messages from MessagesRepository
-**Precondition:** json file with service response exists
+**Precondition:** json file with service response exists.
+
 **Steps:**
-
-    - Create a RemoteDataSource with an HTTPClient injecting the mock URLSession into the HTTPClient constructor
-    -  Create a MessageRepository injecting the RemoteDataSource created with the mock URLSession
-    - Setup the data that the mock URLSession will return
-    - Trigger the getMessages() function in the repository.
-    - Capture and validate the output from getMessages()
+   - Create a RemoteDataSource with an HTTPClient injecting the mock URLSession into the HTTPClient constructor
+   - Create a MessageRepository injecting the RemoteDataSource created with the mock URLSession
+   - Setup the data that the mock URLSession will return
+   - Trigger the getMessages() function in the repository.
+   - Capture and validate the output from getMessages()
 
 **Expected:** The objects fetched from the repository must be of type [User] and the data should be the same as the json file.
 
 #### Test case 4:
+Handle error fetching messages from MessagesRepository.
 
-Handle error fetching messages from MessagesRepository
-**Precondition:** json file with service response exists
+**Precondition:** json file with service response exists.
+
 **Steps:**
-
    - Create a RemoteDataSource with an HTTPClient injecting the mock URLSession into the HTTPClient constructor
    - Create a MessageRepository injecting the RemoteDataSource created with the mock URLSession
    - Setup the error the mock URLSession will return
    - Trigger the getMessages() function in the repository.
    - Capture and validate the output from getMessages()
-
+ 
 **Expected:** The error thrown should be the handled expected error.
 
 Unit tests, intergation tests and UI tests should be created when possible, ensure a high code percentage is covered. This plan previously mentioned is an example just for getting all messages in this case, but it should be implemented for every function in both, RemoteDataSource and MessageRepository as well as in all View Models.
 UI Tests should also be implemented on the views to ensure that the views behave as expected and that every button and every field does what it needs to do.
-
 
 
 # Test Automation
