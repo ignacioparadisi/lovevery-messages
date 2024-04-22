@@ -12,8 +12,6 @@
 		32CA64832BD06D3000533154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CA64822BD06D3000533154 /* Assets.xcassets */; };
 		32CA64862BD06D3000533154 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CA64852BD06D3000533154 /* Preview Assets.xcassets */; };
 		32CA64902BD06D3000533154 /* AWSDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA648F2BD06D3000533154 /* AWSDataSourceTests.swift */; };
-		32CA649A2BD06D3000533154 /* MSGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64992BD06D3000533154 /* MSGUITests.swift */; };
-		32CA649C2BD06D3000533154 /* MSGUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA649B2BD06D3000533154 /* MSGUITestsLaunchTests.swift */; };
 		32CA64AD2BD06DEB00533154 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64AC2BD06DEB00533154 /* RemoteDataSource.swift */; };
 		32CA64AF2BD06E9500533154 /* AWSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64AE2BD06E9500533154 /* AWSDataSource.swift */; };
 		32CA64B12BD06F7900533154 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA64B02BD06F7900533154 /* API.swift */; };
@@ -66,8 +64,6 @@
 		32CA648B2BD06D3000533154 /* MSGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CA648F2BD06D3000533154 /* AWSDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSDataSourceTests.swift; sourceTree = "<group>"; };
 		32CA64952BD06D3000533154 /* MSGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		32CA64992BD06D3000533154 /* MSGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSGUITests.swift; sourceTree = "<group>"; };
-		32CA649B2BD06D3000533154 /* MSGUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSGUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		32CA64AC2BD06DEB00533154 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		32CA64AE2BD06E9500533154 /* AWSDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSDataSource.swift; sourceTree = "<group>"; };
 		32CA64B02BD06F7900533154 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -124,7 +120,6 @@
 			children = (
 				32CA647D2BD06D2F00533154 /* MSG */,
 				32CA648E2BD06D3000533154 /* MSGTests */,
-				32CA64982BD06D3000533154 /* MSGUITests */,
 				32CA647C2BD06D2F00533154 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -168,15 +163,6 @@
 				32CA648F2BD06D3000533154 /* AWSDataSourceTests.swift */,
 			);
 			path = MSGTests;
-			sourceTree = "<group>";
-		};
-		32CA64982BD06D3000533154 /* MSGUITests */ = {
-			isa = PBXGroup;
-			children = (
-				32CA64992BD06D3000533154 /* MSGUITests.swift */,
-				32CA649B2BD06D3000533154 /* MSGUITestsLaunchTests.swift */,
-			);
-			path = MSGUITests;
 			sourceTree = "<group>";
 		};
 		32CA64A82BD06D4D00533154 /* Presentation */ = {
@@ -538,8 +524,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32CA649C2BD06D3000533154 /* MSGUITestsLaunchTests.swift in Sources */,
-				32CA649A2BD06D3000533154 /* MSGUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
