@@ -1,5 +1,5 @@
 //
-//  UsersViewModel.swift
+//  ChatsViewModel.swift
 //  MSG
 //
 //  Created by Ignacio Paradisi on 4/20/24.
@@ -9,15 +9,15 @@ import Foundation
 import Observation
 import OSLog
 
-extension UsersView {
+extension ChatListView {
     @Observable
     class ViewModel {
-        private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: String(describing: UsersView.ViewModel.self))
+        private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: String(describing: ChatListView.ViewModel.self))
         private let repository: MessagesRepository
-        private(set) var users: [User] = []
+        private(set) var chats: [Chat] = []
         private(set) var isLoading: Bool = false
         private(set) var error: Error?
-        private var task: Task<[User], Error>?
+        private var task: Task<[Chat], Error>?
         var showErrorAlert: Bool = false
         
         init(repository: MessagesRepository = HTTPMessagesRepository()) {
@@ -34,9 +34,9 @@ extension UsersView {
                 isLoading = false
                 task = nil
             }
-            task = Task { try await repository.getMessages() }
+            task = Task { try await repository.getChats() }
             do {
-                self.users = try await task!.value
+                self.chats = try await task!.value
             } catch {
                 logger.error("Error fetching messages: \(error.localizedDescription)")
                 self.error = error

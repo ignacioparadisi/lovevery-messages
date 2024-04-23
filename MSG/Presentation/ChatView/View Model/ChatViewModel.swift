@@ -1,5 +1,5 @@
 //
-//  ConversationViewModel.swift
+//  ChatViewModel.swift
 //  MSG
 //
 //  Created by Ignacio Paradisi on 4/20/24.
@@ -10,32 +10,32 @@ import Observation
 import UIKit
 import OSLog
 
-extension ConversationView {
+extension ChatView {
     @Observable
     class ViewModel {
-        private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: String(describing: ConversationView.ViewModel.self))
+        private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: String(describing: ChatView.ViewModel.self))
         private let repository: MessagesRepository
-        private(set) var user: User
+        private(set) var chat: Chat
         private(set) var isLoading: Bool = false
         private(set) var error: Error?
         var showErrorAlert: Bool = false
-        private var task: Task<User, Error>?
+        private var task: Task<Chat, Error>?
         
         var messages: [Message] {
-            return user.message
+            return chat.message
         }
         var title: String {
-            return user.user
+            return chat.user
         }
         
-        init(repository: MessagesRepository = HTTPMessagesRepository(), user: User) {
+        init(repository: MessagesRepository = HTTPMessagesRepository(), user: String) {
             self.repository = repository
-            self.user = User(user: user.user, message: [])
+            self.chat = Chat(user: user, message: [])
         }
         
         func fetchUser() async {
             guard !isLoading else { return }
-            logger.info("Fetching messages for user \(self.user.user)")
+            logger.info("Fetching messages for user \(self.chat.user)")
             task?.cancel()
             isLoading = true
             error = nil
@@ -43,11 +43,11 @@ extension ConversationView {
                 isLoading = false
                 task = nil
             }
-            task = Task { try await repository.getMessages(for: user.user) }
+            task = Task { try await repository.getChat(for: chat.user) }
             do {
-                self.user = try await task!.value
+                self.chat = try await task!.value
             } catch {
-                logger.error("Error fetching messages for user \(self.user.user): \(error.localizedDescription)")
+                logger.error("Error fetching messages for user \(self.chat.user): \(error.localizedDescription)")
                 self.error = error
                 showErrorAlert = true
             }

@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Chat.swift
 //  MSG
 //
 //  Created by Ignacio Paradisi on 4/20/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Codable, Identifiable {
+struct Chat: Codable, Identifiable {
     var id: UUID = UUID()
     let user: String
     let message: [Message]
@@ -33,12 +33,12 @@ struct User: Codable, Identifiable {
         self.message = message
     }
     
-    static func == (lhs: User, rhs: User) -> Bool {
+    static func == (lhs: Chat, rhs: Chat) -> Bool {
         return lhs.user == rhs.user
     }
 }
 
-extension User: Hashable {
+extension Chat: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(user)
     }

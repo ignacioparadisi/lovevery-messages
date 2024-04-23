@@ -8,13 +8,13 @@
 import Foundation
 
 enum MessagesAPI: API {
-    case getAllMessages
-    case getMessagesByUser(user: String)
+    case getAllChats
+    case getChatByUser(user: String)
     case createMessage(message: MessageBody)
     
     var method: HTTPMethod {
         switch self {
-        case .getAllMessages, .getMessagesByUser:
+        case .getAllChats, .getChatByUser:
             return .get
         case .createMessage:
             return .post
@@ -33,9 +33,9 @@ enum MessagesAPI: API {
         switch self {
         case .createMessage:
             return "/proto/messages"
-        case .getAllMessages:
+        case .getAllChats:
             return "/proto/messages"
-        case .getMessagesByUser(let user):
+        case .getChatByUser(let user):
             return "/proto/messages/\(user)"
         }
     }

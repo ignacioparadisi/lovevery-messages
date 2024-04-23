@@ -14,8 +14,8 @@ final class MSGTests: XCTestCase {
 
     func testGetMessagesSuccess() async throws {
         let data = try JSONReader().read(path: "get_messages")
-        MockURLProtocol.setHandler(url: MessagesAPI.getAllMessages.url!, data: data, statusCode: 200)
-        let response = try await dataSource.getMessages()
+        MockURLProtocol.setHandler(url: MessagesAPI.getAllChats.url!, data: data, statusCode: 200)
+        let response = try await dataSource.getChats()
         XCTAssertEqual(response.count, 2)
         XCTAssert(response.keys.contains("Dan"))
         XCTAssertEqual(response["Dan"]?.count, 2)
@@ -23,8 +23,8 @@ final class MSGTests: XCTestCase {
 
     func testGetMessagesForUserSuccess() async throws {
         let data = try JSONReader().read(path: "get_messages_for_user")
-        MockURLProtocol.setHandler(url: MessagesAPI.getMessagesByUser(user: "Dan").url!, data: data, statusCode: 200)
-        let response = try await dataSource.getMessages(for: "Dan")
+        MockURLProtocol.setHandler(url: MessagesAPI.getChatByUser(user: "Dan").url!, data: data, statusCode: 200)
+        let response = try await dataSource.getChat(for: "Dan")
         XCTAssertEqual(response.user, "Dan")
         XCTAssertEqual(response.message.count, 1)
     }

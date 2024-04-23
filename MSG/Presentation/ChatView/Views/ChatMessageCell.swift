@@ -1,5 +1,5 @@
 //
-//  ConversationMessageCell.swift
+//  ChatMessageCell.swift
 //  MSG
 //
 //  Created by Ignacio Paradisi on 4/20/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ConversationMessageCell: View {
+struct ChatMessageCell: View {
     let message: Message
     var body: some View {
         VStack(alignment: .leading) {

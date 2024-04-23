@@ -15,15 +15,15 @@ class AWSDataSource: RemoteDataSource {
         self.client = client
     }
     
-    func getMessages() async throws -> [String: [Message]] {
-        let requestAPI = MessagesAPI.getAllMessages
+    func getChats() async throws -> [String: [Message]] {
+        let requestAPI = MessagesAPI.getAllChats
         let response: MessageResponse<[String: [Message]]> = try await client.request(api: requestAPI)
         return response.body ?? [:]
     }
     
-    func getMessages(for user: String) async throws -> User {
-        let requestAPI = MessagesAPI.getMessagesByUser(user: user)
-        let response: MessageResponse<User> = try await client.request(api: requestAPI)
+    func getChat(for user: String) async throws -> Chat {
+        let requestAPI = MessagesAPI.getChatByUser(user: user)
+        let response: MessageResponse<Chat> = try await client.request(api: requestAPI)
         guard let responseBody = response.body else {
             throw RequestError.emptyResponse
         }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ChatListView.swift
 //  MSG
 //
 //  Created by Ignacio Paradisi on 4/17/24.
@@ -7,27 +7,29 @@
 
 import SwiftUI
 
-struct UsersView: View {
+struct ChatListView: View {
     @Bindable private var viewModel: ViewModel = ViewModel()
     @State private var presentMessageForm: Bool = false
     @State private var showLoadingIndicator: Bool = false
     var body: some View {
         List {
-            ForEach(viewModel.users) { user in
-                UserMessageCell(user: user)
+            ForEach(viewModel.chats) { chat in
+                NavigationLink(value: chat) {
+                    ChatCell(chat: chat)
+                }
             }
         }
         .overlay {
             if showLoadingIndicator {
                 ProgressView()
-            } else if viewModel.users.isEmpty {
+            } else if viewModel.chats.isEmpty {
                 Text("You don't have new messages")
             } else {
                 EmptyView()
             }
         }
-        .navigationDestination(for: User.self, destination: { user in
-            ConversationView(viewModel: ConversationView.ViewModel(user: user))
+        .navigationDestination(for: Chat.self, destination: { chat in
+            ChatView(viewModel: ChatView.ViewModel(user: chat.user))
         })
         .alert("Error", isPresented: $viewModel.showErrorAlert, actions: {
             Button {
@@ -57,12 +59,12 @@ struct UsersView: View {
                 })
             }
         })
-        .animation(.spring, value: viewModel.users)
+        .animation(.spring, value: viewModel.chats)
         .refreshable {
             await viewModel.fetchMessages()
         }
         .task {
-            if viewModel.users.isEmpty {
+            if viewModel.chats.isEmpty {
                 showLoadingIndicator = true
                 await viewModel.fetchMessages()
                 showLoadingIndicator = false
@@ -72,5 +74,5 @@ struct UsersView: View {
 }
 
 #Preview {
-    UsersView()
+    ChatListView()
 }

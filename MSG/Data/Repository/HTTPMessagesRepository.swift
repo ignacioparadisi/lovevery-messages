@@ -13,21 +13,21 @@ class HTTPMessagesRepository: MessagesRepository {
         self.dataSource = dataSource
     }
     
-    func getMessages() async throws -> [User] {
-        let messages = try await dataSource.getMessages()
-        let users = messages.keys.map {
-            User(user: $0, message: messages[$0] ?? [])
+    func getChats() async throws -> [Chat] {
+        let messages = try await dataSource.getChats()
+        let chats = messages.keys.map {
+            Chat(user: $0, message: messages[$0] ?? [])
         }
-        return users.sorted { $0.user < $1.user }
+        return chats.sorted { $0.user < $1.user }
     }
     
-    func getMessages(for user: String) async throws -> User {
-        return try await dataSource.getMessages(for: user)
+    func getChat(for user: String) async throws -> Chat {
+        return try await dataSource.getChat(for: user)
     }
     
-    func sendMessage(user: String, message: Message) async throws -> User {
+    func sendMessage(user: String, message: Message) async throws -> Chat {
         let response = try await dataSource.sendMessage(user: user, message: message)
         let message = Message(subject: response.subject, message: response.message)
-        return User(user: response.user, message: [message])
+        return Chat(user: response.user, message: [message])
     }
 }

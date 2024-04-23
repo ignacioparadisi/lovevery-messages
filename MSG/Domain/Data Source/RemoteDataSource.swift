@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RemoteDataSource {
-    func getMessages() async throws -> [String: [Message]]
-    func getMessages(for user: String) async throws -> User
+    func getChats() async throws -> [String: [Message]]
+    func getChat(for user: String) async throws -> Chat
     func sendMessage(user: String, message: Message) async throws -> MessageBody
 }

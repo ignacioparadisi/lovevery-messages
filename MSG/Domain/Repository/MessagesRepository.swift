@@ -8,8 +8,8 @@
 import Foundation
 
 protocol MessagesRepository {
-    func getMessages() async throws -> [User]
-    func getMessages(for user: String) async throws -> User
+    func getChats() async throws -> [Chat]
+    func getChat(for user: String) async throws -> Chat
     @discardableResult
-    func sendMessage(user: String, message: Message) async throws -> User
+    func sendMessage(user: String, message: Message) async throws -> Chat
 }

@@ -1,5 +1,5 @@
 //
-//  ConversationView.swift
+//  ChatView.swift
 //  MSG
 //
 //  Created by Ignacio Paradisi on 4/20/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ConversationView: View {
+struct ChatView: View {
     @Bindable private var viewModel: ViewModel
     @State private var showLoadingIndicator: Bool = false
     
@@ -19,7 +19,7 @@ struct ConversationView: View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 16) {
                 ForEach(viewModel.messages) { message in
-                    ConversationMessageCell(message: message)
+                    ChatMessageCell(message: message)
                         .contextMenu {
                             Button {
                                 viewModel.copyMessage(message: message)
@@ -61,5 +61,5 @@ struct ConversationView: View {
 }
 
 #Preview {
-    ConversationView(viewModel: ConversationView.ViewModel(user: User(user: "Dan", message: [])))
+    ChatView(viewModel: ChatView.ViewModel(user: "Dan"))
 }
