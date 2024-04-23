@@ -4,11 +4,11 @@
 flowchart TD
 	HTTPClient --> RemoteDataSource
 	RemoteDataSource --> MessageRepository
-	MessageRepository --> UsersViewModel
-	MessageRepository --> ConversationViewModel
+	MessageRepository --> ChatListViewModel
+	MessageRepository --> ChatViewModel
 	MessageRepository --> SendMessageViewModel
-	UsersViewModel --> UsersView
-	ConversationViewModel --> ConversationView
+	ChatListViewModel --> ChatListView
+	ChatViewModel --> ChatView
 	SendMessageViewModel --> SendMessageView
 ```
 
@@ -37,7 +37,7 @@ because it separates responsibilities.
 
 ```mermaid
 classDiagram
-	class User {
+	class Chat {
 		+user: String
 		+message: [Message]
 	}
@@ -45,7 +45,7 @@ classDiagram
 		+subject: String 
 		+message: String 
 	}
-	User -- Message
+	Chat -- Message
 ```
 
 
@@ -56,14 +56,14 @@ classDiagram
 
 ```mermaid
 sequenceDiagram
-  UsersView->>+UsersViewModel: getMessages()
-  UsersViewModel->>+MessageRepository: getMessages()
-  MessageRepository->>+RemoteDataSource: getMessages()
+  ChatListView->>+ChatListViewModel: getChats()
+  ChatListViewModel->>+MessageRepository: getChats()
+  MessageRepository->>+RemoteDataSource: getChats()
   RemoteDataSource->>+HTTPClient: request(api: API)
   HTTPClient-->>-RemoteDataSource: Decoded response
   RemoteDataSource-->>-MessageRepository: [String: [Message]]
-  MessageRepository-->>-UsersViewModel: [User]
-  UsersViewModel-->>-UsersView: View reloads in data change
+  MessageRepository-->>-ChatListViewModel: [Chat]
+  ChatListViewModel-->>-ChatListView: View reloads in data change
 
 ```
 
@@ -73,14 +73,14 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-  ConversationView->>+ConversationViewModel: getMessages(for: User)
-  ConversationViewModel->>+MessageRepository: getMessages(for: User)
-  MessageRepository->>+RemoteDataSource: getMessages(for: User)
+  ChatView->>+ChatViewModel: getChat(for: User)
+  ChatViewModel->>+MessageRepository: getChat(for: User)
+  MessageRepository->>+RemoteDataSource: getChat(for: User)
   RemoteDataSource->>+HTTPClient: request(api: API)
   HTTPClient-->>-RemoteDataSource: Decoded response
-  RemoteDataSource-->>-MessageRepository: User
-  MessageRepository-->>-ConversationViewModel: User
-  ConversationViewModel-->>-ConversationView: View reloads in data change
+  RemoteDataSource-->>-MessageRepository: Chat
+  MessageRepository-->>-ChatViewModel: Chat
+  ChatViewModel-->>-ChatView: View reloads in data change
 ```
 
 
@@ -94,8 +94,8 @@ sequenceDiagram
   MessageRepository->>+RemoteDataSource: sendMessage(user: String, message: Message)
   RemoteDataSource->>+HTTPClient: request(api: API)
   HTTPClient-->>-RemoteDataSource: Decoded response
-  RemoteDataSource-->>-MessageRepository: User
-  MessageRepository-->>-SendMessageViewModel: User
+  RemoteDataSource-->>-MessageRepository: Chat
+  MessageRepository-->>-SendMessageViewModel: Chat
   SendMessageViewModel-->>-SendMessageView: View reloads in data change
 ```
 
@@ -163,7 +163,7 @@ Handle error fetching messages from MessagesRepository.
    - Setup the error the mock URLSession will return
    - Trigger the getMessages() function in the repository.
    - Capture and validate the output from getMessages()
- 
+
 **Expected:** The error thrown should be the handled expected error.
 
 Unit tests, intergation tests and UI tests should be created when possible, ensure a high code percentage is covered. This plan previously mentioned is an example just for getting all messages in this case, but it should be implemented for every function in both, RemoteDataSource and MessageRepository as well as in all View Models.
