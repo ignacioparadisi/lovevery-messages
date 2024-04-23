@@ -120,8 +120,8 @@ Successfully fetch all messages from RemoteDataSource.
 
    - Create a RemoteDataSource with an HTTPClient injecting the MockURLSession into the HTTPClient constructor
    - Setup the data that the mock URLSession will return
-   - Trigger the getMessages() function in the data source.
-   - Capture and validate the output from getMessages()
+   - Trigger the getChats() function in the data source.
+   - Capture and validate the output from getChats()
 
 **Expected:** The data fetched from the mock URLSession correctly converts to the Decodable expected object.
 
@@ -133,8 +133,8 @@ Handle error fetching messages from RemoteDataSource.
 **Steps:**
    - Create a RemoteDataSource with an HTTPClient injecting the MockURLSession into the HTTPClient constructor
    - Setup the error the mock URLSession will return
-   - Trigger the getMessages() function in the data source.
-   - Capture and validate the output from getMessages()
+   - Trigger the getChats() function in the data source.
+   - Capture and validate the output from getChats()
 
 **Expected:** The URLSession should return the expected error.
 
@@ -147,8 +147,8 @@ Successfully fetch all messages from MessagesRepository.
    - Create a RemoteDataSource with an HTTPClient injecting the mock URLSession into the HTTPClient constructor
    - Create a MessageRepository injecting the RemoteDataSource created with the mock URLSession
    - Setup the data that the mock URLSession will return
-   - Trigger the getMessages() function in the repository.
-   - Capture and validate the output from getMessages()
+   - Trigger the getChats() function in the repository.
+   - Capture and validate the output from getChats()
 
 **Expected:** The objects fetched from the repository must be of type [User] and the data should be the same as the json file.
 
@@ -161,8 +161,8 @@ Handle error fetching messages from MessagesRepository.
    - Create a RemoteDataSource with an HTTPClient injecting the mock URLSession into the HTTPClient constructor
    - Create a MessageRepository injecting the RemoteDataSource created with the mock URLSession
    - Setup the error the mock URLSession will return
-   - Trigger the getMessages() function in the repository.
-   - Capture and validate the output from getMessages()
+   - Trigger the getChats() function in the repository.
+   - Capture and validate the output from getChats()
 
 **Expected:** The error thrown should be the handled expected error.
 
